@@ -1,7 +1,4 @@
 package LinkedLIst;
-import java.util.Collections;
-
-
 public class ZigZag {
     
     class Node {
