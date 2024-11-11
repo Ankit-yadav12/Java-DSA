@@ -53,6 +53,7 @@ public class implementWithLL {
         }
     }
 
+    @SuppressWarnings("static-access")
     public static void main(String args[]) {
         Queue q = new Queue();
         q.enque(1);
