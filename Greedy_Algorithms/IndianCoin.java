@@ -4,19 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IndianCoin {
-    static final int currency[] = { 1, 2, 5, 10, 20, 50, 100, 500, 2000 };
+    static final int currency[] = {2000, 500, 100, 50, 20, 10, 5, 2, 1};
 
     static void findCoin(int amount, ArrayList<Integer> coins) {
         int remainingAmount = amount;
         
-        int length = currency.length-1;
-        while (remainingAmount != 0) {
-            if (currency[length] > remainingAmount)
-                length--;
-            else {
-                remainingAmount -= currency[length];
-                coins.add(currency[length]);
+        for(int i : currency){
+            if(remainingAmount>=i){
+                remainingAmount  -= i;
+                coins.add(i);
             }
+            if(remainingAmount==0) break;
         }
     }
 
