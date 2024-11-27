@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Chocolate {
 
     public static void main(String args[]) {
-        int m = 4, n = 6;
+        // int m = 4, n = 6;
         Integer verticalCut[] = { 2, 1, 3, 1, 4 };
         Integer horizontalCut[] = { 4, 1, 2 };
 
