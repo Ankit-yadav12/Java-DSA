@@ -29,14 +29,32 @@ public class PreorderTree {
             return newNode;
         }
 
-        public static void print(Node root){
+        public static void preorder(Node root){
             if(root==null){
                 System.out.print(-1+ " ");
                 return;
             }
             System.out.print(root.data + " ");
-            print(root.left);
-            print(root.right);
+            preorder(root.left);
+            preorder(root.right);
+        }
+        public static void inorder(Node root){
+            if(root==null){
+                System.out.print(-1+ " ");
+                return;
+            }
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
+        public static void postorder(Node root){
+            if(root==null){
+                System.out.print(-1+ " ");
+                return;
+            }
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data + " ");
         }
     }
 
@@ -48,6 +66,12 @@ public class PreorderTree {
 
         System.out.println("root = " + root.data);
 
-        tree.print(root);
+        tree.preorder(root);
+        System.out.println();
+
+        tree.inorder(root);
+        System.out.println();
+
+        tree.postorder(root);
     }
 }
