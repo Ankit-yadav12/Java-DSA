@@ -18,22 +18,36 @@ public class PreorderTree {
         static int idx = -1;
 
         public Node buildTree(int nodes[]) {
-                    idx++;
-                    if (nodes[idx] == -1)
-                        return null;
-        
-                    Node newNode = new Node(nodes[idx]);
-                    newNode.left = buildTree(nodes);
-                    newNode.right = buildTree(nodes);
-        
-                    return newNode;
-                }
+            idx++;
+            if (nodes[idx] == -1)
+                return null;
+
+            Node newNode = new Node(nodes[idx]);
+            newNode.left = buildTree(nodes);
+            newNode.right = buildTree(nodes);
+
+            return newNode;
+        }
+
+        public static void print(Node root){
+            if(root==null){
+                System.out.print(-1+ " ");
+                return;
             }
-        
-            public static void main(String[] args) {
-                int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
-                MakeTree tree = new MakeTree();
-                Node root = tree.buildTree(nodes);
+            System.out.print(root.data + " ");
+            print(root.left);
+            print(root.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+
+        MakeTree tree = new MakeTree();
+        Node root = tree.buildTree(nodes);
+
         System.out.println("root = " + root.data);
+
+        tree.print(root);
     }
 }
